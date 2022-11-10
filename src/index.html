@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">    
+    <title>CSMA/CD Efficiency Calculator</title>
+</head>
+<body>
+    <h1>CSMA/CD Efficiency Calculator</h1>
+    
+    <!-- Create card -->
+    <div class="card">
+        <div class="input-list">
+            <div class="input-item">
+                <label for="eff-d"><strong>D</strong> (distance in <strong>m</strong>) = </label>
+                <input type="number" id="eff-d" name="eff-d" min="1" max="10000000000" value="">
+            </div>
+            <div class="input-item">
+                <label for="eff-v"><strong>V</strong> (wave propagation speed in <strong>m/s</strong>) = </label>
+                <input type="number" id="eff-v" name="eff-v" min="1" max="10000000000" value="">
+            </div>
+            <div class="input-item">
+                <label for="eff-l"><strong>L</strong> (packet size in <strong>bits</strong>) = </label>
+                <input type="number" id="eff-l" name="eff-l" min="1" max="10000000000" value="">
+            </div>
+            <div class="input-item">
+                <label for="eff-r"><strong>R</strong> (bitrate in <strong>bit/s</strong>) = </label>
+                <input type="number" id="eff-r" name="eff-r" min="1" max="10000000000" value="">
+            </div>
+        </div>
+        <p>The Network Efficiency is = <span id="result">-</span>%</p>
+        <button id="calculate">Calculate</button>
+    </div>
+
+    <p id="copyright">Copyright © 2022 Nikolas Papadopoulos. You can find the source code <a href="https://github.com/NikolasPpd/CSMA-CD-Efficiency-Calculator">here</a>.</p>
+</body>
+</html>
