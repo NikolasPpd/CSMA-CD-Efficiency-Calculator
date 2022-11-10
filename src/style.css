@@ -1,8 +1,9 @@
-html, body, .container {
+html, body {
     height: 100%;
 }
 
 body {
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     display: flex;
@@ -11,31 +12,80 @@ body {
     justify-content: center;
 }
 
+h1 {
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    max-width: 90%;
+}
+
+label, p {
+    font-size: 1.6rem;
+}
+
 /* Cards */
 .card {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    width: 60%;
+    width: 50%;
+    height: 65%;
     text-align: center;
     border-radius: 10px;
     padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Responsive Card size media queries */
+/* Responsive media queries */
 @media screen and (max-width: 1200px) {
+    .card {
+        width: 60%;
+        height: 60%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+@media screen and (max-width: 768px) {
     .card {
         width: 80%;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .card {
-        width: 100%;
+        width: 90%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    html {
+        font-size: 14px;
     }
 }
 
-h1 {
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 700;
+@media screen and (max-height: 1024px) {
+    body {
+        height: auto;
+    }
+}
+@media screen and (max-height: 768px) {
+    body {
+        height: auto;
+    }
+    html {
+        font-size: 12px;
+    }
+}
+
+/* Groups of label and input field */
+.input-item {
+    margin-bottom: 18px;
+}
+.input-item:nth-last-child(1) {
+    margin-bottom: 0;
 }
 
 /* Input fields */
@@ -47,7 +97,7 @@ input {
     display: inline-block;
     border-radius: 10px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     line-height: 20px;
     background-color: #fff;
@@ -70,7 +120,7 @@ input:focus {
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
     line-height: normal;
@@ -101,7 +151,7 @@ input:focus {
 
 /* Result */
 #result {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
     padding: 0 16px;
     width: 100%;
@@ -110,7 +160,7 @@ input:focus {
 
 /* Copyright */
 #copyright {
-    font-size: 12px;
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 16px 24px;
 }
