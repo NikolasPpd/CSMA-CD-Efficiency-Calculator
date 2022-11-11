@@ -12,6 +12,8 @@ var btnModalClose = document.getElementsByClassName("close")[0];
 btnModalOpen.onclick = function() {
     document.body.classList.add('noscroll');
     modal.style.display = "block";
+    //copy current settings to tempSettings without reference
+    tempSettings = JSON.parse(JSON.stringify(settings));
 }
 
 // close modal when the user clicks on the close button
@@ -218,8 +220,6 @@ function loadSettings() {
 // temporarily save settings in tempSettings
 function updateTempSettings(button) {
     let dataOption = button.parentNode.parentNode.getAttribute('data-option');
-    //copy current settings to tempSettings without reference
-    tempSettings = JSON.parse(JSON.stringify(settings));
     
     tempSettings[dataOption].unit = allSettings[button.value].unit;
     tempSettings[dataOption].power = allSettings[button.value].power;
@@ -236,7 +236,7 @@ function deselectAllGroupButtons(button) {
 
 // update settings and save them to local storage
 function saveSettings() {
-    settings = tempSettings;
+    settings = JSON.parse(JSON.stringify(tempSettings));
     localStorage.setItem('settings', JSON.stringify(settings));
 }
 
