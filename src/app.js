@@ -1,6 +1,30 @@
-//add event listener to button
+//get the modal
+var modal = document.getElementById("settings-modal");
+//get the settings button
+var btnModalOpen = document.getElementById("settings-button");
+//get the close button
+var btnModalClose = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the settings button, open the modal
+btnModalOpen.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on the close button, close the modal
+btnModalClose.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//add event listener to the Calculate button
 document.getElementById('calculate').addEventListener('click', () => {
-    //get values from input fields
+    //get values from the input fields
     let distance = document.getElementById('eff-d').value;
     let velocity = document.getElementById('eff-v').value;
     let packetSize = document.getElementById('eff-l').value;
