@@ -1,3 +1,6 @@
+// ***************************************************
+//                    MODAL WINDOW
+// ***************************************************
 //get the modal
 var modal = document.getElementById("settings-modal");
 //get the settings button
@@ -22,6 +25,9 @@ window.onclick = function(event) {
     }
 }
 
+// ***************************************************
+//                CALCULATE FUNCTIONS
+// ***************************************************
 //add event listener to the Calculate button
 document.getElementById('calculate').addEventListener('click', () => {
     //get values from the input fields
@@ -57,3 +63,7 @@ function calculateColorHue(efficiency) {
     let hue = 120 - ((100 - efficiency) * 1.2);
     return hue;
 }
+
+// ***************************************************
+//                    SETTINGS
+// ***************************************************
