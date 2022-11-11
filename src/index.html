@@ -13,8 +13,12 @@
 <body>
     <h1>CSMA/CD Network Efficiency Calculator</h1>
     
-    <!-- Create card -->
+    <!-- Calculator card -->
     <div class="card">
+        <!-- Settings button -->
+        <button id="settings-button">
+            <img src="icons/settings-gear-icon.svg">
+        </button>
         <div class="input-list">
             <div class="input-item">
                 <label for="eff-d"><strong>D</strong> (distance in <strong>m</strong>) = </label>
@@ -37,7 +41,17 @@
         <button id="calculate">Calculate</button>
     </div>
 
+    <!-- Copyright info -->
     <p id="copyright">Copyright © 2022 Nikolas Papadopoulos. You can find the source code <a href="https://github.com/NikolasPpd/CSMA-CD-Efficiency-Calculator">here</a>.</p>
+
+    <!-- Settings modal -->
+    <div id="settings-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ad rerum repellendus iste, et voluptas labore tenetur deserunt quae dicta sint iusto dolores temporibus doloremque amet ullam, nisi voluptates aliquam?</p>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
