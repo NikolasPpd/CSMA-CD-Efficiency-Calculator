@@ -8,6 +8,14 @@ var btnModalOpen = document.getElementById("settings-button");
 // get the close button
 var btnModalClose = document.getElementsByClassName("close")[0];
 
+// check for keypresses
+document.body.onkeyup = function(e) { 
+    // if escape is pressed and modal is open, close modal
+    if(e.key === 'Escape' && modal.style.display === "block") {
+        closeModal();
+    }
+ } 
+
 // open modal when the user clicks on the settings button
 btnModalOpen.onclick = function() {
     document.body.classList.add('noscroll');
