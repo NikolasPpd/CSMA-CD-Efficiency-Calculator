@@ -238,11 +238,9 @@ input:focus {
     transform: translateY(0);
     user-select: none;
 }
-.multi-button:first-of-type{
-    border-radius: .5em 0 0 .5em;
-}
-.multi-button:last-of-type{
-    border-radius: 0 .5em .5em 0;
+.multi-option {
+    border-radius: 15px;
+    overflow: hidden;
 }
 .multi-option {
     display: flex;
