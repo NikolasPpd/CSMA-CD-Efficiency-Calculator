@@ -262,7 +262,7 @@ input:focus {
     cursor: pointer;
 }
 
-p.setting-title {
+p.settings-title {
     margin-right: 20px;
     min-width: 160px;
     text-align: right;
