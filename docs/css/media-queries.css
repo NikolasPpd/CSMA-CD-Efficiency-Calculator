@@ -8,6 +8,20 @@
     h1 {
         font-size: 2.2rem;
     }
+    .modal-content {
+        text-align: center;
+    }
+    p.settings-title {
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .settings-option {
+        flex-direction: column;
+    }
+    .multi-button {
+        flex-grow: 1;
+    }
 }
 @media screen and (max-width: 768px) {
     .card {
