@@ -17,8 +17,8 @@
     <!-- Calculator card -->
     <div class="card">
         <!-- Settings button -->
-        <button id="settings-button" class="corner-button">
-            <img src="icons/settings-gear-icon.svg">
+        <button id="settings-button" class="corner-button" aria-label="open settings">
+            <img src="icons/settings-gear-icon.svg" alt="settings-gear">
         </button>
         <div id="input-list">
             <div class="input-item">
@@ -39,55 +39,55 @@
             </div>
         </div>
         <p>The Network Efficiency is = <span id="result">-</span>%</p>
-        <button id="calculate" class="action-button">Calculate</button>
+        <button id="calculate" class="action-button" aria-label="calculate efficiency">Calculate</button>
     </div>
 
     <!-- Copyright info -->
-    <p id="copyright">Copyright © 2022 Nikolas Papadopoulos. You can find the source code <a href="https://github.com/NikolasPpd/CSMA-CD-Efficiency-Calculator">here</a>.</p>
+    <p id="copyright">Copyright © 2022 Nikolas Papadopoulos. You can find the source code <a href="https://github.com/NikolasPpd/CSMA-CD-Efficiency-Calculator" aria-label="open GitHub repository">here</a>.</p>
 
     <!-- Settings modal -->
     <div id="settings-modal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close corner-button">&times;</span>
+            <span class="close corner-button" aria-label="close settings">&times;</span>
             <h2>Settings</h2>
             <p>Select the units of measurement you prefer to use</p>
             <!-- Settings form -->
             <div class="settings-option" id="option-distance" data-option="distance">
                 <p class="settings-title">Distance</p>
                 <div class="multi-option">
-                    <button class="multi-button" value="m">Meters</button>
-                    <button class="multi-button" value="km">Kilometers</button>
+                    <button class="multi-button" value="m" aria-label="meters">Meters</button>
+                    <button class="multi-button" value="km" aria-label="kilometers">Kilometers</button>
                 </div>
             </div>
             <div class="settings-option" id="option-velocity" data-option="velocity">
                 <p class="settings-title">Speed</p>
                 <div class="multi-option">
-                    <button class="multi-button" value="ms">m/s</button>
-                    <button class="multi-button" value="kms">km/s</button>
+                    <button class="multi-button" value="ms" aria-label="meters per second">m/s</button>
+                    <button class="multi-button" value="kms" aria-label="kilometers per second">km/s</button>
                 </div>
             </div>
             <div class="settings-option" id="option-packet-size" data-option="packetSize">
                 <p class="settings-title">Packet size</p>
                 <div class="multi-option">
-                    <button class="multi-button" value="bits" id="deleteme">bits</button>
-                    <button class="multi-button" value="kbits">Kb</button>
-                    <button class="multi-button" value="mbits">Mb</button>
-                    <button class="multi-button" value="gbits">Gb</button>
-                    <button class="multi-button" value="tbits">Tb</button>
+                    <button class="multi-button" value="bits" aria-label="bits">bits</button>
+                    <button class="multi-button" value="kbits" aria-label="kilobits">Kb</button>
+                    <button class="multi-button" value="mbits" aria-label="megabits">Mb</button>
+                    <button class="multi-button" value="gbits" aria-label="gigabits">Gb</button>
+                    <button class="multi-button" value="tbits" aria-label="terabits">Tb</button>
                 </div>
             </div>
             <div class="settings-option" id="option-bitrate" data-option="bitrate">
                 <p class="settings-title">Bitrate</p>
                 <div class="multi-option">
-                    <button class="multi-button" value="bps">bps</button>
-                    <button class="multi-button" value="kbps">Kb/s</button>
-                    <button class="multi-button" value="mbps">Mb/s</button>
-                    <button class="multi-button" value="gbps">Gb/s</button>
-                    <button class="multi-button" value="tbps">Tb/s</button>
+                    <button class="multi-button" value="bps" aria-label="bits per second">bps</button>
+                    <button class="multi-button" value="kbps" aria-label="kilobits per second">Kb/s</button>
+                    <button class="multi-button" value="mbps" aria-label="megabits per second">Mb/s</button>
+                    <button class="multi-button" value="gbps" aria-label="gigabits per second">Gb/s</button>
+                    <button class="multi-button" value="tbps" aria-label="terabits per second">Tb/s</button>
                 </div>
             </div>
-            <button id="save" class="action-button">Save</button>
+            <button id="save" class="action-button" aria-label="save settings">Save</button>
         </div>
     </div>
 
