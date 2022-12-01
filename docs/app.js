@@ -49,13 +49,38 @@ let distance;
 let velocity;
 let packetSize;
 let bitrate;
+
+let inDistance = document.getElementById('eff-d');
+let inVelocity = document.getElementById('eff-v');
+let inPacketSize = document.getElementById('eff-l');
+let inBitrate = document.getElementById('eff-r');
 //add event listener to the Calculate button
 document.getElementById('calculate').addEventListener('click', () => {
     //get values from the input fields
-    distance = convertToBaseUnit(document.getElementById('eff-d').value, settings.distance.power);
-    velocity = convertToBaseUnit(document.getElementById('eff-v').value, settings.velocity.power);
-    packetSize = convertToBaseUnit(document.getElementById('eff-l').value, settings.packetSize.power);
-    bitrate = convertToBaseUnit(document.getElementById('eff-r').value, settings.bitrate.power);
+    if (inDistance.value !== "" && inDistance.value > 0) {
+        distance = convertToBaseUnit(inDistance.value, settings.distance.power);
+    }
+    else {
+        distance = undefined;
+    }
+    if (inVelocity.value !== "" && inVelocity.value > 0) {
+        velocity = convertToBaseUnit(inVelocity.value, settings.velocity.power);
+    }
+    else {
+        velocity = undefined;
+    }
+    if (inPacketSize.value !== "" && inPacketSize.value > 0) {
+        packetSize = convertToBaseUnit(inPacketSize.value, settings.packetSize.power);
+    }
+    else {
+        packetSize = undefined;
+    }
+    if (inBitrate.value !== "" && inBitrate.value > 0) {
+        bitrate = convertToBaseUnit(inBitrate.value, settings.bitrate.power);
+    }
+    else {
+        bitrate = undefined;
+    }
 
     //calculate efficiency and text color hue
     let efficiency = calculateEfficiency(distance, velocity, packetSize, bitrate);
@@ -63,6 +88,14 @@ document.getElementById('calculate').addEventListener('click', () => {
     let hue;
     if (isNaN(efficiency)) {
         hue = 0;
+        // get list of all input fields
+        let inputs = document.querySelectorAll('input');
+        for (let i = 0; i < inputs.length; i++) {
+            // if the value is invalid add the class "red-border" to the input field
+            if (!(inputs[i].value !== "" && inputs[i].value > 0)) {
+                inputs[i].classList.add('red-border');
+            }
+        }
     } else {
         hue = calculateColorHue(efficiency);
     }
@@ -70,6 +103,14 @@ document.getElementById('calculate').addEventListener('click', () => {
     //set result text
     result.style.color = `hsl(${hue}, 100%, 45%)`;
     result.innerHTML = efficiency;
+});
+
+// add event listener to input fields to capture when the value is changed
+document.querySelectorAll('input').forEach((input) => {
+    input.addEventListener('input', () => {
+        // remove red-border class from input field
+        input.classList.remove('red-border');
+    });
 });
 
 function calculateEfficiency(distance, velocity, packetSize, bitrate) {
@@ -87,10 +128,10 @@ function convertToBaseUnit(value, power) {
 }
 
 function clearTextInputs() {
-    document.getElementById('eff-d').value = "";
-    document.getElementById('eff-v').value = "";
-    document.getElementById('eff-l').value = "";
-    document.getElementById('eff-r').value = "";
+    inDistance.value = "";
+    inVelocity.value = "";
+    inPacketSize.value = "";
+    inBitrate.value = "";
 }
 
 function calculateColorHue(efficiency) {
