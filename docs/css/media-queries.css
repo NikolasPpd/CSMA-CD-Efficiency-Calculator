@@ -22,6 +22,9 @@
     .multi-button {
         flex-grow: 1;
     }
+    .multi-option {
+        width: 100%;
+    }
 }
 @media screen and (max-width: 768px) {
     .card {
