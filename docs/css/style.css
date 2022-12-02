@@ -82,6 +82,11 @@ input:focus {
 }
 
 .red-border {
+    border: 1px solid #ff00005e;
+    box-shadow: 0 0 0 1px #e000006b, 0 2px 4px 0 rgb(240 0 0 / 7%), 0 1px 1.5px 0 rgb(240 0 0 / 5%);
+}
+
+.red-border:focus {
     border: 1px solid #ff0000;
 }
 
