@@ -26,6 +26,11 @@ h2 {
     margin-bottom: 6px;
 }
 
+label {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
 label, p {
     font-size: 1.6rem;
 }
@@ -63,7 +68,7 @@ input {
     outline: none;
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin-bottom: 8px;
     display: inline-block;
     border-radius: 10px;
     box-sizing: border-box;
