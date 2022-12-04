@@ -20,9 +20,22 @@ document.body.onkeyup = function(e) {
 btnModalOpen.onclick = function() {
     document.body.classList.add('noscroll');
     modal.style.display = "block";
+    setCalculatorTabIndexActive(false);
     //copy current settings to tempSettings without reference
     tempSettings = JSON.parse(JSON.stringify(settings));
 }
+
+//set calculator tab index active status
+function setCalculatorTabIndexActive(setActive) {
+    let tabIndex = setActive ? "0" : "-1";
+    btnModalOpen.setAttribute("tabindex", tabIndex);
+    document.querySelectorAll("input").forEach((input) => {
+        input.setAttribute("tabindex", tabIndex);
+    });
+    document.getElementById("calculate").setAttribute("tabindex", tabIndex);
+    document.querySelector("a").setAttribute("tabindex", tabIndex);
+}
+
 
 // close modal when the user clicks on the close button
 btnModalClose.onclick = function() {
@@ -39,6 +52,7 @@ window.onclick = function(event) {
 function closeModal() {
     document.body.classList.remove('noscroll');
     modal.style.display = "none";
+    setCalculatorTabIndexActive(true);
     updateAllSelections();
 }
 
