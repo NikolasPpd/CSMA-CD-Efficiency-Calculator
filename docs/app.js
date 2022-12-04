@@ -72,25 +72,25 @@ let inBitrate = document.getElementById('eff-r');
 document.getElementById('calculate').addEventListener('click', () => {
     //get values from the input fields
     if (inDistance.value !== "" && inDistance.value > 0) {
-        distance = convertToBaseUnit(inDistance.value, settings.distance.power);
+        distance = convertToUnit(inDistance.value, settings.distance.power);
     }
     else {
         distance = undefined;
     }
     if (inVelocity.value !== "" && inVelocity.value > 0) {
-        velocity = convertToBaseUnit(inVelocity.value, settings.velocity.power);
+        velocity = convertToUnit(inVelocity.value, settings.velocity.power);
     }
     else {
         velocity = undefined;
     }
     if (inPacketSize.value !== "" && inPacketSize.value > 0) {
-        packetSize = convertToBaseUnit(inPacketSize.value, settings.packetSize.power);
+        packetSize = convertToUnit(inPacketSize.value, settings.packetSize.power);
     }
     else {
         packetSize = undefined;
     }
     if (inBitrate.value !== "" && inBitrate.value > 0) {
-        bitrate = convertToBaseUnit(inBitrate.value, settings.bitrate.power);
+        bitrate = convertToUnit(inBitrate.value, settings.bitrate.power);
     }
     else {
         bitrate = undefined;
@@ -137,7 +137,7 @@ function calculateEfficiency(distance, velocity, packetSize, bitrate) {
     return result;
 }
 
-function convertToBaseUnit(value, power) {
+function convertToUnit(value, power) {
     return value * Math.pow(10, power);
 }
 
@@ -146,6 +146,13 @@ function clearTextInputs() {
     inVelocity.value = "";
     inPacketSize.value = "";
     inBitrate.value = "";
+}
+
+function updateInputValues() {
+    inDistance.value = convertToUnit(inDistance.value, (settings.distance.power - tempSettings.distance.power));
+    inVelocity.value = convertToUnit(inVelocity.value, (settings.velocity.power - tempSettings.velocity.power));
+    inPacketSize.value = convertToUnit(inPacketSize.value, (settings.packetSize.power - tempSettings.packetSize.power));
+    inBitrate.value = convertToUnit(inBitrate.value, (settings.bitrate.power - tempSettings.bitrate.power));
 }
 
 function calculateColorHue(efficiency) {
@@ -254,7 +261,8 @@ document.querySelectorAll(".settings-option div").forEach((div) => {
 //add event listener to the save button
 document.getElementById('save').addEventListener('click', () => {
     if (settingsChanged) {
-        clearTextInputs();
+        // clearTextInputs();
+        updateInputValues();
         saveSettings();
         updateUnits();
         updateAllSelections();
