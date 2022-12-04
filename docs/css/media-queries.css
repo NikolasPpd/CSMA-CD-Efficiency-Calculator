@@ -43,15 +43,7 @@
     }
 }
 
-@media screen and (max-height: 1024px) {
-    body {
-        height: auto;
-    }
-}
 @media screen and (max-height: 768px) {
-    body {
-        height: auto;
-    }
     html {
         font-size: 12px;
     }
