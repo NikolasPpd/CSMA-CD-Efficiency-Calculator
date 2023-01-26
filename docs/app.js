@@ -261,7 +261,6 @@ document.querySelectorAll(".settings-option div").forEach((div) => {
 //add event listener to the save button
 document.getElementById('save').addEventListener('click', () => {
     if (settingsChanged) {
-        // clearTextInputs();
         updateInputValues();
         saveSettings();
         updateUnits();
