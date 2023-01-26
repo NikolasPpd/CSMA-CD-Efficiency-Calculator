@@ -104,10 +104,10 @@ document.getElementById('calculate').addEventListener('click', () => {
         hue = 0;
         // get list of all input fields
         let inputs = document.querySelectorAll('input');
-        for (let i = 0; i < inputs.length; i++) {
+        for (const element of inputs) {
             // if the value is invalid add the class "red-border" to the input field
-            if (!(inputs[i].value !== "" && inputs[i].value > 0)) {
-                inputs[i].classList.add('red-border');
+            if (!(element.value !== "" && element.value > 0)) {
+                element.classList.add('red-border');
             }
         }
     } else {
@@ -233,8 +233,8 @@ function updateTempSettings(button) {
 // deselect all buttons in the same group as the clicked button
 function deselectAllGroupButtons(button) {
     let buttons = button.parentNode.children;
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove("multi-selected");
+    for (const element of buttons) {
+        element.classList.remove("multi-selected");
     }
 }
 
