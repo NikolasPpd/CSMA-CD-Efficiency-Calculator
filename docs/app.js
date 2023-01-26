@@ -71,30 +71,10 @@ let inBitrate = document.getElementById('eff-r');
 //add event listener to the Calculate button
 document.getElementById('calculate').addEventListener('click', () => {
     //get values from the input fields
-    if (inDistance.value !== "" && inDistance.value > 0) {
-        distance = convertToUnit(inDistance.value, settings.distance.power);
-    }
-    else {
-        distance = undefined;
-    }
-    if (inVelocity.value !== "" && inVelocity.value > 0) {
-        velocity = convertToUnit(inVelocity.value, settings.velocity.power);
-    }
-    else {
-        velocity = undefined;
-    }
-    if (inPacketSize.value !== "" && inPacketSize.value > 0) {
-        packetSize = convertToUnit(inPacketSize.value, settings.packetSize.power);
-    }
-    else {
-        packetSize = undefined;
-    }
-    if (inBitrate.value !== "" && inBitrate.value > 0) {
-        bitrate = convertToUnit(inBitrate.value, settings.bitrate.power);
-    }
-    else {
-        bitrate = undefined;
-    }
+    distance = inDistance.value > 0 ? convertToUnit(inDistance.value, settings.distance.power) : undefined;
+    velocity = inVelocity.value > 0 ? convertToUnit(inVelocity.value, settings.velocity.power) : undefined;
+    packetSize = inPacketSize.value > 0 ? convertToUnit(inPacketSize.value, settings.packetSize.power) : undefined;
+    bitrate = inBitrate.value > 0 ? convertToUnit(inBitrate.value, settings.bitrate.power) : undefined;
 
     //calculate efficiency and text color hue
     let efficiency = calculateEfficiency(distance, velocity, packetSize, bitrate);
