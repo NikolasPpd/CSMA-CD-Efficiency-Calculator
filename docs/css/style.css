@@ -292,13 +292,11 @@ input:focus {
     user-select: none;
 }
 .multi-option {
-    border-radius: 15px;
-    overflow: hidden;
-}
-.multi-option {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    border-radius: 15px;
+    overflow: hidden;
 }
 .multi-option:hover button:hover {
     background: #1a1a1a;
