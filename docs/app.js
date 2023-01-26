@@ -2,11 +2,11 @@
 //                    MODAL WINDOW
 // ***************************************************
 // get the modal
-var modal = document.getElementById("settings-modal");
+let modal = document.getElementById("settings-modal");
 // get the settings button
-var btnModalOpen = document.getElementById("settings-button");
+let btnModalOpen = document.getElementById("settings-button");
 // get the close button
-var btnModalClose = document.getElementsByClassName("close")[0];
+let btnModalClose = document.getElementsByClassName("close")[0];
 
 // check for keypresses
 document.body.onkeyup = function(e) { 
