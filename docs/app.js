@@ -271,4 +271,7 @@ document.getElementById('save').addEventListener('click', () => {
     closeModal();
 });
 
+//set copyright year
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
 loadSettings();
